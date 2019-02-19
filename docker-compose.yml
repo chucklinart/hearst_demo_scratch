@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  db:
+    image: postgres
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8088
+    networks: 
+      - default
+    volumes:
+      - .:/code
+    ports:
+      - "8088:8088"
+    depends_on:
+      - db
+networks:
+  default:
+    external:
+      name: chuck_network

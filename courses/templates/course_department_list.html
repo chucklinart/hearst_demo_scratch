@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if courses_by_department %} 
+        <h2>All Courses in the {{ course_department }} department </h2>
+            <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Course Name</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in courses_by_department %}
+            <tr>
+                <td>{{i.course_title}}</td>
+                <td>{{i.course_description}}</td>
+            </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+    {% else %}
+        <h3>No Courses in the {{ course_department }} yet. Please add some if you are an administrator.</h3>
+    {% endif %}
+{% endblock %}

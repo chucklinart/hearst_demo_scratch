@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+    {% block content %}
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h2>Welcome to the Demo School!</h2>
+        <p>This is just a a demo of a Django website made while applying for a job at  Hearst Media.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4 panel panel-primary">
+          <div class="panel-heading">
+            <h2>Courses</h2>
+          </div>
+          <p>Check out all the courses offered at this hypothetical school! </p>
+          <p><a class="btn btn-default" href="/courses" role="button">View Courses &raquo;</a></p>
+        </div>
+        <div class="col-md-4 panel panel-warning">
+          <div class="panel-heading">
+            <h2>Departments</h2>
+          </div>
+          <p>See the departments in our school. </p>
+          <p><a class="btn btn-default" href="/departments" role="button">View Departments &raquo;</a></p>
+       </div>
+        <div class="col-md-4 panel panel-danger">
+          <div class="panel-heading">
+            <h2>Faculty</h2>
+          </div>
+          <p>Browse through the profiles of our esteemed faculty members.</p>
+          <p><a class="btn btn-default" href="/professors" role="button">View Professors &raquo;</a></p>
+        </div>
+        <div class="col-md-4 panel panel-danger">
+          <div class="panel-heading">
+            <h2>Students</h2>
+          </div>
+          <p>Check out our student body!</p>
+          <p><a class="btn btn-default" href="/students" role="button">View Students &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+      {% endblock %}

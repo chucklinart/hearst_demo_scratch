@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Courses</h2>
+    {% if course_list %}
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Course Name</th>
+        <th>Department</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in course_list %}
+      <tr>
+        <td>{{i.course_title}}</td>
+        <td><a href="{{i.course_department}}">{{i.course_department}}</a></td>
+        <td>{{i.course_description}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <h3>No Courses yet. Please log in and crate some if you are an admin.</h3>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>All Departments</h2>
+    {% if department_list %}
+      ,<ul>
+       {% for i in department_list %}
+         <li>{{i.name}}</li>
+       {% endfor %}
+       <ul>
+    {% else %}
+       <h3>No departments yet. Please log in and add departments if you are an admin.</h3>
+    {% endif %}
+{% endblock %}
