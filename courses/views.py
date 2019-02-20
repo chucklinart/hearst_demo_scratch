@@ -1,7 +1,9 @@
 from django.shortcuts import render, get_list_or_404, get_object_or_404
 from django.views.generic import ListView, TemplateView
 from django.core.paginator import Paginator
-from .models import Department, Course, Student, Prof
+from .models import Department, Course, Student, Prof, CourseSerializer
+from rest_framework import viewsets
+
 
 class DepartmentList(ListView):
     model = Department
@@ -58,6 +60,12 @@ class ProfCoursesList(ListView):
         context['courses'] = self.courses
         return context
     context_object_name = 'courses_by_prof'
+
+# viewsets for API endpoints
+
+class CourseViewSet(viewsets.ModelViewSet):
+    queryset = Course.objects.all()
+    serializer_class = CourseSerializer
 
 def home(request):
     return render(request, 'home.html')

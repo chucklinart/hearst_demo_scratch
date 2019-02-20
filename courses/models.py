@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.html import escape, mark_safe
 from PIL import Image
+from rest_framework import serializers
 
 class Department(models.Model):
     name = models.CharField(max_length=30)
@@ -22,7 +23,14 @@ class Course(models.Model):
     # make values available to Python API
     def __str__(self):
         return self.course_title
-    
+
+# demo RESTful API encpoint for Courses    
+class CourseSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Course
+        fields = ('course_department', 'course_title', 'course_description')
+
+
 class Student(models.Model):
     courses = models.ManyToManyField(Course, related_name='student_courses')
     first_name = models.CharField(max_length=15)

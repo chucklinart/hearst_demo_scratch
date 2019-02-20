@@ -1,6 +1,7 @@
 __pycache__/
 *.conf.*
 *.pyc
+*.swp
 Dockerfile
 requirements.txt
 docker-compose.yml

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -71,7 +72,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'hearst.wsgi.application'
 
-
+REST_FRAMEWORK = {
+    # allow read-only access for unauthenticated users and use Django's auth
+    # for all other uses
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
