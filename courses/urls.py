@@ -13,6 +13,6 @@ urlpatterns = [
     path('courses/<course_department>/', views.CourseDepartmentList.as_view()),
     path('students/', views.StudentList.as_view(), name='students'),     
     path('professors/', views.ProfList.as_view(), name='professors'),
-    path('', include(router.urls)),
+    path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
