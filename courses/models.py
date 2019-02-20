@@ -28,7 +28,7 @@ class Course(models.Model):
 class CourseSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Course
-        fields = ('course_department', 'course_title', 'course_description')
+        fields = ('course_title', 'course_description')
 
 
 class Student(models.Model):
