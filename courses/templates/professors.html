@@ -1,5 +1,33 @@
 {% extends 'base.html' %}
-{% block content %}
-<h1>UNDER CONSTRUCTION</h1>
-<h2>List Professors Here</h2>
-{% endblock %}
+  {% block content %}
+  {% if prof_list %}
+    <h2>Our Faculty</h2>
+     <table class="table table-striped">
+       <thead>
+         <tr>
+           <th>Name</th>
+           <th>Department</th>
+           <th>Courses Taught</th>
+           <th>Headshot</th>
+         </tr>
+       </thead>
+       <tbody>
+       {% for i in prof_list %}
+         <tr>
+           <td>{{i.last_name}}, {{i.first_name}}</td>
+           <td>{{i.department}}</td>
+           {% if i.courses %}
+             <td>{% include 'prof_courses.html' %}</td>
+           {% else %}
+             <td>No courses this term</td>
+           {% endif %}
+           <td></td> 
+         </tr>
+       {% endfor %}
+       </tbody>
+     </table>
+  {% else %}
+    <h1>UNDER CONSTRUCTION</h1>
+    <h2>List Professors Here</h2>
+  {% endif %}
+  {% endblock %}

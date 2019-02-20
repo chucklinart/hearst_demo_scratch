@@ -49,6 +49,16 @@ class ProfList(ListView):
     queryset = Prof.objects.all()
     context_object_name = 'prof_list'
 
+class ProfCoursesList(ListView):
+    template_name = 'prof_courses.html'
+    def get_queryset(self):
+        self.courses = get_list_or_404(Course, name=self.kwargs[courses])
+        return Prof.objects.filter(prof_courses=self.courses)
+    def get_context_data(self, **kwargs):
+        context['courses'] = self.courses
+        return context
+    context_object_name = 'courses_by_prof'
+
 def home(request):
     return render(request, 'home.html')
 

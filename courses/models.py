@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.html import escape, mark_safe
+from PIL import Image
 
 class Department(models.Model):
     name = models.CharField(max_length=30)
@@ -58,8 +59,8 @@ class Prof(models.Model):
             return            
 
         super(Prof, self).save()
-        avatar = Image.open(self.photo)
-        (width, height) = image.size     
+        avatar = Image.open(self.avatar)
+        (width, height) = avatar.size     
         size = ( 100, 100)
         avatar = avatar.resize(size, Image.ANTIALIAS)
-        avatar.save(self.photo.path)
+        avatar.save(self.avatar.path)
