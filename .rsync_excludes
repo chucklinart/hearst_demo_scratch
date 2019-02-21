@@ -6,3 +6,5 @@ Dockerfile
 requirements.txt
 docker-compose.yml
 deploy.sh
+*settings*
+*conig*
