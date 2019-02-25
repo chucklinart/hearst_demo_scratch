@@ -1,2 +1,5 @@
 deploy.sh
 .rsync_excludes
+*.bk
+__PYCACHE__/
+
