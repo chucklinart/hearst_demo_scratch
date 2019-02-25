@@ -27,10 +27,10 @@ Just be sure to change it in the docker-compose.yml file if you do.
 
 You will see it in your browser at http://0.0.0.0:8088 
 
-### If you'd like to see the admin section, CTR-C out and create a superuser the normal way, 
-then log in at /admin and add some data ###
-
+### If you'd like to see the admin section, CTR-C out and create a superuser the normal way, ie ###
 ```docker-compose run web /code/manage.py createsuperuser```
+
+then log in at /admin and add some data
 
 You can see the app hosted on a gunicorn/nginx stack on my server at 
 
